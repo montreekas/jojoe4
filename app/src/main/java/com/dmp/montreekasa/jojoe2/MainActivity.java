@@ -84,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
 
         //textView.setTypeface(DS);
 
+        MsgBox.show(MainActivity.this,"Jojoe");
+
     }
 
     @Override
