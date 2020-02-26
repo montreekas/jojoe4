@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Main3Activity"
+    tools:showIn="@layout/activity_main3">
+
+
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="143dp"
+        android:background="@drawable/hello"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_rotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Rotate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgView" />
+
+    <Button
+        android:id="@+id/bt_flip_horz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:text="Flip Horz"
+        app:layout_constraintStart_toEndOf="@+id/bt_rotate"
+        app:layout_constraintTop_toBottomOf="@+id/imgView" />
+
+    <Button
+        android:id="@+id/bt_flip_vert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:text="Flip Vert"
+        app:layout_constraintStart_toEndOf="@+id/bt_flip_horz"
+        app:layout_constraintTop_toBottomOf="@+id/imgView" />
+
+    <EditText
+        android:id="@+id/text_angle"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/imgView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_zoomin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Zoom In"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_rotate" />
+
+    <Button
+        android:id="@+id/bt_zoomout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Zoom Out"
+        app:layout_constraintStart_toEndOf="@+id/bt_zoomin"
+        app:layout_constraintTop_toBottomOf="@+id/bt_flip_horz" />
+
+    <Button
+        android:id="@+id/bt_fadein"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Fade In"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_zoomin" />
+
+    <Button
+        android:id="@+id/bt_fadeout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Fade Out"
+        app:layout_constraintStart_toEndOf="@+id/bt_fadein"
+        app:layout_constraintTop_toBottomOf="@+id/bt_zoomout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

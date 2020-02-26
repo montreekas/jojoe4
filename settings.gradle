@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':stmappplayer'
 rootProject.name='Jojoe2'

@@ -46,10 +46,10 @@ public class Main2Activity extends AppCompatActivity {
             return true;
         }
 
-        if (id == R.id.home){
-
-            onBackPressed();
-        }
+//        if (id == R.id.home){
+//
+//            onBackPressed();
+//        }
 
         return super.onOptionsItemSelected(item);
     }

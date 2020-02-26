@@ -1,6 +1,7 @@
 package com.dmp.montreekasa.jojoe2;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 
@@ -23,13 +24,16 @@ import android.widget.TextView;
 
 import java.time.Instant;
 
+import io.github.douglasjunior.androidSimpleTooltip.SimpleTooltip;
+import com.dmp.montreekasa.stmappplayer.Hello;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -46,7 +50,29 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(
-                                MainActivity.this, Main2Activity.class);
+                                getApplicationContext(), Main2Activity.class);
+                        startActivity(intent);
+                    }
+                }
+        );
+
+        findViewById(R.id.button2).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(
+                                MainActivity.this, Main3Activity.class);
+                        startActivity(intent);
+                    }
+                }
+        );
+
+        findViewById(R.id.button3).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(
+                                MainActivity.this, Main4Activity.class);
                         startActivity(intent);
                     }
                 }
@@ -84,7 +110,33 @@ public class MainActivity extends AppCompatActivity {
 
         //textView.setTypeface(DS);
 
-        MsgBox.show(MainActivity.this,"Jojoe");
+        //MsgBox.show(MainActivity.this,"Jojoe");
+
+        findViewById(R.id.buttonOK).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText editText = (EditText)findViewById(R.id.txtUser);
+                if(editText.getText().length() == 0){
+                    SimpleTooltip.Builder builder = new SimpleTooltip.Builder(getBaseContext())
+                            .anchorView(editText)
+                            .text("กรุณาระบุด้วยค่ะ")
+                            .animated(false)
+                            .transparentOverlay(false)
+                            .backgroundColor(Color.RED)
+                            .textColor(Color.WHITE);
+                    SimpleTooltip tooltip = builder.build();
+                    tooltip.show();
+                }
+            }
+        });
+
+        findViewById(R.id.buttonHello).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //System.out.println("Hello Jojoe");
+                Hello.sayHello("Jojoe");
+            }
+        });
 
     }
 
