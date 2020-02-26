@@ -135,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //System.out.println("Hello Jojoe");
                 Hello.sayHello("Jojoe");
+                
             }
         });
 
